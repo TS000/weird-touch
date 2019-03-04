@@ -1,28 +1,42 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Styled from 'styled-components';
 
-class App extends Component {
+import Home from './pages/home';
+import ErrorPage from './pages/error.js';
+
+const FullWidth = Styled.div`
+  width: 100%;
+  min-height: calc(100vh - 70px);
+    }
+`
+
+export default class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <FullWidth>
+          <Router>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route
+                  path="/admin"
+                  component={() =>
+                    (window.location =
+                      'https://www.youtube.com/watch?time_continue=116&v=dJRsWJqDjFE')
+                  }
+                />
+                <Route
+                  path="/wp-admin"
+                  component={() =>
+                    (window.location = 'https://youtu.be/djV11Xbc914?t=1m27s')
+                  }
+                />
+                <Route component={ErrorPage} />
+              </Switch>  
+          </Router>
+        </FullWidth>
       </div>
-    );
+    )
   }
 }
-
-export default App;
