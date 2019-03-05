@@ -14,27 +14,22 @@ import Card from '../components/Card';
 class Home extends Component {
   state = { diz: 1 }
   render() { 
+
+    const mixes = [ {name: 'Cool Mix1'}, {name: 'Cool Mix2'}, {name: 'Cool Mix3'}];
+
     return ( 
       <React.Fragment>
         <h1>Weird Touch.</h1>
+        {mixes.map(mix => (
         <Card 
-            innerTitle="price alerts"
-            imgAlt="Tyler Snow at Weird Touch"
+            innerTitle = {mix.name}
+            imgAlt="a thing"
             white
             link="/thing"
         />
-        <Card 
-            innerTitle="price"
-            imgAlt="Tyler Snow at Weird Touch"
-            white
-            link="/thing"
-        />
-        <Card 
-            innerTitle="stuff"
-            imgAlt="Tyler Snow at Weird Touch"
-            white
-            link="/thing"
-        />
+        )
+        )}
+        
       </React.Fragment>
      );
   }
