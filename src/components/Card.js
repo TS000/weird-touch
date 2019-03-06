@@ -18,6 +18,8 @@ const CallToAction = Styled.div`
     overflow: hidden
     transition: ease all .2s;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    min-height: 200px;
+    min-width: 200px;
     
     &:hover {
           background: rgba(0,0,0,.7);
@@ -27,7 +29,7 @@ const CallToAction = Styled.div`
       left: 0;
       right: 0;
       margin: 0 20px;
-      font-size: 6rem;
+      font-size: 1rem;
       color: ${props => (props.white ? '#fff' : '#000000')};
       @media (min-width: 600px) {
         font-size: 3rem;
@@ -45,13 +47,14 @@ const CallToAction = Styled.div`
       }
 `
 
-export default ({ innerTitle, img, white, imgAlt, small, link }) => {
+export default ({ innerTitle, img, white, imgAlt, small, link, soundcloud }) => {
   return (
-    <Link to={link}>
+    
         <CallToAction white={white} small={small}>
           <img src={img} alt={imgAlt} />
+          {soundcloud}
           <h2>{innerTitle}</h2>
         </CallToAction>
-    </Link>
+   
   )
 }
