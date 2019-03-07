@@ -1,6 +1,6 @@
 import React from 'react'
 import Styled from 'styled-components'
-import { Link } from 'react-router-dom'
+
 
 // To handle options for my components I use simple logic in my CSS
 const CallToAction = Styled.div`
@@ -47,14 +47,16 @@ const CallToAction = Styled.div`
       }
 `
 
-export default ({ innerTitle, img, white, imgAlt, small, link, soundcloud }) => {
+export default ({ innerTitle, img, white, imgAlt, small, mix, id }) => {
+  
   return (
-    
-        <CallToAction white={white} small={small}>
-          <img src={img} alt={imgAlt} />
-          {soundcloud}
+    <div id={id}>
+        <CallToAction white={ white } small={ small }>
+        <div id={id}></div>
+          {/* <audio src={ mix }  controls /> */}
+            <img src={ img } alt= { imgAlt } />
           <h2>{innerTitle}</h2>
         </CallToAction>
-   
+        </div>
   )
-}
+}                                                                  
