@@ -14,10 +14,7 @@ const wavePlayer = new WavePlayer({
 
 class Wave extends Component {
   state = {  }
-  componentDidMount() {
-    wavePlayer.load('https://dmcyn88lu74jl.cloudfront.net/mixes/Tyler+Snow+-+Clean+Your+Records+(Slo-Mo-Disco).mp3', data)
-    .then(() => wavePlayer.play()) 
-  }
+  
   render() { 
     return ( <div if="waveform"></div> );
   }
