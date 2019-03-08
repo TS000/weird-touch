@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Styled from 'styled-components';
 
 import Home from './pages/home';
-import ErrorPage from './pages/error.js';
+import ErrorPage from './pages/error';
+import Mix from './components/Mix';
 
 const FullWidth = Styled.div`
   width: 100%;
@@ -18,7 +19,8 @@ export default class App extends Component {
         <FullWidth>
           <Router>
               <Switch>
-                <Route exact path="/" component={Home} />
+                <Route exact path="/" component={ Home } />
+                <Route path="/:id" component={ Mix } />
                 <Route
                   path="/admin"
                   component={() =>
@@ -32,7 +34,7 @@ export default class App extends Component {
                     (window.location = 'https://youtu.be/djV11Xbc914?t=1m27s')
                   }
                 />
-                <Route component={ErrorPage} />
+                <Route component={ ErrorPage } />
               </Switch>  
           </Router>
         </FullWidth>
