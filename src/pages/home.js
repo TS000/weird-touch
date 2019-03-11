@@ -9,7 +9,6 @@ const CardWrap = styled.div`
   justify-content: center;
   flex-wrap: wrap; 
 `
-
 const url = 'https://dmcyn88lu74jl.cloudfront.net/json/list.json';
 
 const data = {
@@ -18,8 +17,6 @@ const data = {
     'Content-Type': 'application/json'
   }),
 };
-
-
 
 export default class Home extends Component {
   constructor(props) {
@@ -39,7 +36,6 @@ export default class Home extends Component {
 
   render() { 
     const { mixes } = this.state;
-    console.log(mixes)
     return ( 
       <React.Fragment>
         <h1>Weird Touch.</h1>
@@ -47,10 +43,10 @@ export default class Home extends Component {
         {mixes.map(mix => (
         <Card 
             innerTitle = { mix.dj }
-            img={ mix.image }
-            imgAlt="a thing"
+            img={`https://dmcyn88lu74jl.cloudfront.net/images/${mix.id}.png`}
+            imgAlt={mix.dj}
             white
-            key={ mix.dj }
+            key={ mix.id }
             id={ mix.id }
         />
         ))}
