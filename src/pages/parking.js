@@ -32,7 +32,7 @@ padding-top: 30px;
       width: 45%;
     }
 `
-const ErrorPage = () => {
+const Parking = () => {
     return (
         <PageFour>
    
@@ -42,4 +42,4 @@ const ErrorPage = () => {
     )
 }
 
-export default ErrorPage
+export default Parking
