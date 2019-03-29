@@ -14,12 +14,16 @@ const fadeIn = keyframes`
 const PageFour = styled.div`
 width: 100%;
 text-align: center;
-padding-top: 30px;
+padding-top: 25%;
+@media (min-width: 800px){
+  padding-top: 30px;
+}
     > h1 {
         position: relative
         top: 30%
         font-size: 80px
         color: black
+        
     } 
     > h2 {
         position: relative
@@ -29,7 +33,10 @@ padding-top: 30px;
     }
     img {
       animation: 5s ${fadeIn} ease-out;
-      width: 45%;
+      width: 100%;
+      @media (min-width: 800px){
+        width: 45%;
+      }
     }
 `
 const Parking = () => {
