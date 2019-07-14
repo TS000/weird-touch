@@ -1,8 +1,6 @@
-import { render } from 'react-dom'
 import React, { useState } from 'react'
 import { useSprings, animated, interpolate } from 'react-spring'
 import { useGesture } from 'react-use-gesture'
-import './index.css'
 
 const cards = [
   'https://i.imgur.com/9yILi61.png',
@@ -44,5 +42,4 @@ function Deck() {
   ))
 }
 
-render(<Deck />, document.getElementById('root'))
-
+export default Deck();

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 // import anime from 'animejs';
-import Card from '../components/Card';
+import Deck from '../components/VinylStack';
 
 const CardWrap = styled.div`
   display: flex;
@@ -39,7 +39,7 @@ export default class Home extends Component {
     return ( 
       <React.Fragment>
         <h1>Weird Touch.</h1>
-        <CardWrap>
+        {/* <CardWrap>
         {mixes.map(mix => (
         <Card 
             innerTitle = { mix.dj }
@@ -50,7 +50,7 @@ export default class Home extends Component {
             id={ mix.id }
         />
         ))}
-        </CardWrap>
+        </CardWrap> */}
       </React.Fragment>
      );
   }
