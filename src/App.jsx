@@ -5,7 +5,7 @@ import Styled from 'styled-components';
 import Home from './pages/home';
 import ErrorPage from './pages/error';
 import Mix from './components/Mix';
-import Parking from './pages/parking'
+// import Parking from './pages/parking'
 
 const FullWidth = Styled.div`
   width: 100%;
