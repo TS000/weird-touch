@@ -48,14 +48,24 @@ const CallToAction = Styled.div`
       }
 `
 
-export default ({ innerTitle, img, white, imgAlt, small, id }) => {
-  
+export default ({ innerTitle, img, white, imgAlt, small, id, title, trackList }) => {
+
   return (
-    <Link to={ id }>
-        <CallToAction white={ white } small={ small }>
-            <img src={ img } alt= { imgAlt } />
-          <h2>{innerTitle}</h2>
-        </CallToAction>
-      </Link>
+    <Link to={{
+      pathname: `/${title}`,
+      state: {
+        trackList: trackList,
+        title: title,
+        img: img,
+        imgAlt: imgAlt,
+        id: id,
+      }
+
+    }}>
+      <CallToAction white={white} small={small}>
+        <img src={img} alt={imgAlt} />
+        <h2>{innerTitle}</h2>
+      </CallToAction>
+    </Link>
   )
 }                                                                  

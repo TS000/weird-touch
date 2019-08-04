@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 // import anime from 'animejs';
 import Card from '../components/Card';
@@ -18,41 +18,42 @@ const data = {
   }),
 };
 
-export default class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { mixes: [] }
-  }
+function Home() {
 
-  componentDidMount(){
-    const { mixes } = this.state;
-    fetch(url,data)
+  const [mixes, setMixes] = useState([{
+    mixes: {}
+  }]);
+
+  useEffect(() => {
+    fetch(url, data)
       .then(response => response.json())
       .then(json => {
-        this.setState({ mixes: json });
-        console.log(mixes)
+        setMixes(json);
+        console.log(json)
       })
-    }
-
-  render() { 
-    const { mixes } = this.state;
-    return ( 
-      <React.Fragment>
-        <h1>Weird Touch.</h1>
-        <CardWrap>
+  })
+  console.log(mixes)
+  return (
+    <React.Fragment>
+      <h1>Weird Touch.</h1>
+      <CardWrap>
         {mixes.map(mix => (
-        <Card 
-            innerTitle = { mix.dj }
+          <Card
+            innerTitle={mix.dj}
+            mixTitle={mix.title}
             img={`https://dmcyn88lu74jl.cloudfront.net/images/${mix.id}.png`}
             imgAlt={mix.dj}
             white
-            key={ mix.id }
-            id={ mix.id }
-        />
+            key={mix.id}
+            id={mix.id}
+            title={mix.title}
+            trackList={mix.trackList}
+          />
         ))}
-        </CardWrap>
-      </React.Fragment>
-     );
-  }
+      </CardWrap>
+    </React.Fragment>
+  );
 }
+
+export default Home()
 
