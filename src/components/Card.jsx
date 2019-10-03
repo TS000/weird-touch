@@ -1,26 +1,32 @@
 import React from 'react'
-import Styled from 'styled-components'
+import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import Fade from 'react-reveal/Fade'
 
-
-// To handle options for my components I use simple logic in my CSS
-const CallToAction = Styled.div`
+const CTAWrap = styled.div`
+  display: block;
+  width: 800px;
+  height: 800px;
+  background: red;
+`
+const CallToAction = styled.div`
     display: flex;
     justify-content: center;
     position: relative;
     text-align: center;
     align-items: center;
-    margin: 20px
+    margin: 20px;
     padding: 0 20px;
     flex-wrap: wrap;
     background-color: ${props => (props.white ? '#000000' : '#fff')}; 
-    text-transform: uppercase
-    border: 4px solid black
-    overflow: hidden
+    text-transform: uppercase;
+    border: 4px solid black;
+    overflow: hidden;
     transition: ease all .2s;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     min-height: 200px;
     min-width: 200px;
+    
     
     &:hover {
           background: rgba(0,0,0,.7);
@@ -62,10 +68,14 @@ export default ({ innerTitle, img, white, imgAlt, small, id, title, trackList })
       }
 
     }}>
-      <CallToAction white={white} small={small}>
-        <img src={img} alt={imgAlt} />
-        <h2>{innerTitle}</h2>
-      </CallToAction>
+      <Fade top>
+        <CTAWrap>
+          <CallToAction white={white} small={small}>
+            <img src={img} alt={imgAlt} />
+            <h2>{innerTitle}</h2>
+          </CallToAction>
+        </CTAWrap>
+      </Fade>
     </Link>
   )
 }                                                                  

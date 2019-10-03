@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Styled from 'styled-components';
+import styled from 'styled-components';
 
 import Home from './pages/home';
 import ErrorPage from './pages/error';
 import Mix from './components/Mix';
-// import Parking from './pages/parking'
+import Parking from './pages/parking'
 
-const FullWidth = Styled.div`
+const FullWidth = styled.div`
   width: 100%;
   min-height: calc(100vh - 70px);
     }
@@ -20,7 +20,7 @@ export default class App extends Component {
         <FullWidth>
           <Router>
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/" component={Parking} />
               <Route path="/:id" component={Mix} />
               <Route
                 path="/admin"

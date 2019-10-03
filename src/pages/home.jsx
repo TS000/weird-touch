@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-// import anime from 'animejs';
 import Card from '../components/Card';
 
 const CardWrap = styled.div`

@@ -40,13 +40,15 @@ padding-top: 25%;
     }
 `
 const Parking = () => {
-    return (
-        <PageFour>
-   
-            <img src={Logo} alt="" />
-          
-        </PageFour>
-    )
+  return (
+    <PageFour>
+
+      {/* <img src={Logo} alt="" /> */}
+      <h1>Under construction</h1>
+      <h1>👷‍♂️👷‍♂️👷‍♂️👷‍♀️</h1>
+
+    </PageFour>
+  )
 }
 
 export default Parking
